@@ -1,0 +1,31 @@
+{
+  "name": "wechat-miniapp-session",
+  "version": "0.1.0",
+  "description": "Wechat miniapp session for express",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:client": "parcel build lib/client/index.js --no-minify --no-source-maps -t node --bundle-node-modules --out-dir ./ -o client.js && sed -i '' '1s;^;var ;' ./client.js && parcel build lib/client/index.js --no-source-maps -t node --bundle-node-modules --out-dir ./ -o client.min.js && sed -i '' '1s;^;var ;' ./client.min.js"
+  },
+  "keywords": [
+    "WeChat",
+    "miniapp",
+    "session",
+    "express"
+  ],
+  "author": {
+    "name": "Tom Wang",
+    "email": "tom.wanghaiyi@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express-session": "^1.16.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
